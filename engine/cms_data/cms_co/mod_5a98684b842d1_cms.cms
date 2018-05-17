@@ -1,0 +1,56 @@
+<span style="font-size: medium;"><strong><span style="color: #e4151d;">KONFIGURACJA SERWERA /</span><span style="color: #367da9;">/ BASIC CONFIGURATION</span></strong></span></p>
+<hr />
+<p>&nbsp;</p>
+<p><strong style="color: #e4151d;">+Version:&nbsp;</strong><strong style="color: #e4151d;"><span style="color: #367da9;">Season 2 - Client 1.02c</span></strong></p>
+<p><span style="color: #e4151d;"><strong>+Exp:&nbsp;</strong><strong><span style="color: #367da9;">x300</span></strong></span></p>
+<p><span style="color: #e4151d;"><strong>+Drop:&nbsp;</strong><strong><span style="color: #367da9;">40%</span></strong></span></p>
+<p><span style="color: #e4151d;"><strong>+MaxLevel:&nbsp;</strong><strong><span style="color: #367da9;">400</span></strong></span></p>
+<p><span style="color: #e4151d;"><strong>+Webshop/CashShop:&nbsp;</strong><strong><span style="color: #367da9;">No</span></strong></span></p>
+<p><span style="color: #e4151d;"><strong>+Reset</strong><strong>:&nbsp;<span style="color: #367da9;">Yes</span>&nbsp; max&nbsp;</strong><strong><span style="color: #367da9;">40</span></strong></span></p>
+<p><span style="color: #e4151d;"><strong>+Keep stats</strong><strong>:&nbsp;<span style="color: #367da9;">No</span>&nbsp;</strong></span></p>
+<p><span style="color: #e4151d;"><strong>+Grand Reset</strong><strong>:&nbsp;<span style="color: #367da9;">Yes</span></strong></span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: medium;"><strong><span style="color: #e4151d;">PARTY EXP BONUS</span></strong></span></p>
+<hr />
+<p><strong style="color: #e4151d;">+2 Char Party:</strong><strong style="color: #e4151d;">&nbsp;<span style="color: #367da9;">170%</span></strong></p>
+<p><strong style="color: #e4151d;">+3 Char Party:</strong><strong style="color: #e4151d;">&nbsp;<span style="color: #367da9;">200%</span></strong></p>
+<p><strong style="color: #e4151d;">+4 Char Party:</strong><strong style="color: #e4151d;">&nbsp;<span style="color: #367da9;">230%</span></strong></p>
+<p><strong style="color: #e4151d;">+5 Char Party:</strong><strong style="color: #e4151d;">&nbsp;<span style="color: #367da9;">260%</span></strong></p>
+<p><strong style="color: #e4151d;">+Party Set 3:</strong><strong style="color: #e4151d;">&nbsp;<span style="color: #367da9;">250%</span></strong></p>
+<p><strong style="color: #e4151d;">+Party Set 4:</strong><strong style="color: #e4151d;">&nbsp;<span style="color: #367da9;">280%</span></strong></p>
+<p><strong style="color: #e4151d;">+Party Set 5:</strong><strong style="color: #e4151d;">&nbsp;<span style="color: #367da9;">320%</span></strong></p>
+<p><span style="color: #e4151d;"><strong><span style="color: #367da9;"><br /></span></strong></span></p>
+<p><strong style="color: #000000; font-size: medium;"><span style="color: #e4151d;">SZANSE POWODZENIA /</span><span style="color: #367da9;">/ SUCCESS RATE</span></strong></p>
+<hr />
+<p><strong style="color: #e4151d;">+Soul Success Rate:&nbsp;</strong><strong style="color: #e4151d;"><span style="color: #367da9;">50%</span></strong></p>
+<p><strong style="color: #e4151d;">+Soul Success Rate +Luck:&nbsp;</strong><strong style="color: #e4151d;"><span style="color: #367da9;">75%</span></strong></p>
+<p><strong style="color: #e4151d;"><span style="color: #367da9;"><strong style="color: #e4151d;">+Life Success Rate:&nbsp;</strong><strong style="color: #e4151d;"><span style="color: #367da9;">80%</span></strong></span></strong></p>
+<p><strong style="color: #e4151d;">+10 Mix Rate (+Luck):&nbsp;</strong><strong style="color: #e4151d;"><span style="color: #367da9;">65% (90%)</span></strong></p>
+<p><strong style="color: #e4151d;">+11 Mix Rate (+Luck):&nbsp;</strong><strong style="color: #e4151d;"><span style="color: #367da9;">55% (80%)</span></strong></p>
+<p><strong style="color: #e4151d;">+12 Mix Rate (+Luck):&nbsp;</strong><strong style="color: #e4151d;"><span style="color: #367da9;">45% (70%)</span></strong></p>
+<p><strong style="color: #e4151d;"><span style="color: #367da9;"><strong style="color: #e4151d;">+13 Mix Rate (+Luck):&nbsp;</strong><strong style="color: #e4151d;"><span style="color: #367da9;">35% (60%)</span></strong></span></strong></p>
+<p><strong style="color: #e4151d;"><span style="color: #367da9;"><strong style="color: #e4151d;"><span style="color: #367da9;"><br /></span></strong></span></strong></p>
+<p><strong style="color: #e4151d;"><span style="color: #367da9;"><strong style="color: #e4151d;"><span style="color: #367da9;"> </span></strong></span></strong></p>
+<hr />
+<p><strong style="color: #e4151d;"><strong style="color: #e4151d;"> Poniżej znajdziesz więcej dodatkowych informacji. /</strong></strong><strong style="color: #e4151d;"><span style="color: #367da9;">/ You can find more useful information below.</span></strong></p>
+<p>&nbsp;</p>
+<p style="text-align: left;"><a href="../index.php?page_id=spots"><button class="small_button" style="float: left;">Spots &amp; Maps</button></a></p>
+<p style="text-align: left;">&nbsp;</p>
+<p style="text-align: left;">&nbsp;</p>
+<p style="text-align: left;">&nbsp;</p>
+<p style="text-align: left;"><a href="../index.php?page_id=gr_bonus"><button class="small_button" style="float: left;">Grand Reset Bonus</button></a></p>
+<p style="text-align: left;">&nbsp;</p>
+<p style="text-align: left;">&nbsp;</p>
+<p style="text-align: left;">&nbsp;</p>
+<p style="text-align: left;"><a href="../index.php?page_id=wing_creation"><button class="small_button" style="float: left;">Wing Creation</button></a></p>
+<p>&nbsp;</p>
+<p style="text-align: left;">&nbsp;</p>
+<p style="text-align: left;">&nbsp;</p>
+<p style="text-align: left;"><a href="../index.php?page_id=events"><button class="small_button" style="float: left;">Events</button></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p style="text-align: left;"><a href="../index.php?page_id=boss_drop"><button class="small_button" style="float: left;">Boss Drop</button></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
