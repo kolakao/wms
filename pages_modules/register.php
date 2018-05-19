@@ -109,14 +109,6 @@ function parse_inputs(){
         alert(\'Please enter an valid mail address \n(e.g: somebody@gmail.com)\');
         return false;
     }
-    if (document.sign_up_frm.country.value ==  \'x\'){
-        alert(\'Please select country.\');
-        return false;
-    }
-    if ((document.sign_up_frm.gender[0].checked==false)&&(document.sign_up_frm.gender[1].checked==false)){
-        alert(\'Please select gender.\');
-        return false;
-    }
     if (document.sign_up_frm.question.value ==  \'x\'){
         alert(\'Please select question.\');
         return false;
@@ -202,23 +194,6 @@ function parse_inputs(){
             'len_max' => 50,
             'cont' => 'email'
         );
-        
-        $elems[] = array(
-            'name' => 'country',
-            'label' => text_register_error6,
-            'type' => 'text',
-            'required' => true,
-            'len_max' => 3,
-            'cont' => 'digit'
-        );
-        $elems[] = array(
-            'name' => 'gender',
-            'label' => text_register_error7,
-            'type' => 'text',
-            'required' => true,
-            'len_max' => 1,
-            'cont' => 'digit'
-        );
         $elems[] = array(
             'name' => 'question',
             'label' => text_register_error8,
@@ -254,8 +229,6 @@ function parse_inputs(){
             $userid   = safe_input($_POST['userid'], '');
             $password = safe_input($_POST['password'], '');
             $email    = safe_input($_POST['email_address'], '\_\@\.\-');
-            $country  = safe_input($_POST['country'], '');
-            $gender   = safe_input($_POST['gender'], '');
             $question = safe_input($_POST['question'], '');
             $anaswer  = safe_input($_POST['answer'], '');
             if ($get_config->pers_id_active == '1') {
@@ -299,7 +272,7 @@ function parse_inputs(){
                         }
                         
                         if ($core['config']['md5'] == '1') {
-                            $make_me_acc = $core_db2->Execute("INSERT INTO MEMB_INFO (memb___id,memb__pwd,memb_name,sno__numb,bloc_code,ctl1_code,mail_chek,mail_addr,appl_days,modi_days,out__days,true_days,SecretQuestion,SecretAnswer,Country,Gender,confirmed,activation_id) VALUES (?,[dbo].[fn_md5](?,?),?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", array(
+                            $make_me_acc = $core_db2->Execute("INSERT INTO MEMB_INFO (memb___id,memb__pwd,memb_name,sno__numb,bloc_code,ctl1_code,mail_chek,mail_addr,appl_days,modi_days,out__days,true_days,fpas_ques,fpas_answ) VALUES (?,[dbo].[fn_md5](?,?),?,?,?,?,?,?,?,?,?,?,?,?)", array(
                                 $userid,
                                 $password,
                                 $userid,
@@ -314,14 +287,10 @@ function parse_inputs(){
                                 '2005-01-03',
                                 '2005-01-03',
                                 $question,
-                                $anaswer,
-                                $country,
-                                $gender,
-                                $confirmed,
-                                $activation_id
+                                $anaswer
                             ));
                         } elseif ($core['config']['md5'] == '0') {
-                            $make_me_acc  = $core_db2->Execute("INSERT INTO MEMB_INFO (memb___id,memb__pwd,memb_name,sno__numb,bloc_code,ctl1_code,mail_chek,mail_addr,appl_days,modi_days,out__days,true_days,SecretQuestion,SecretAnswer,Country,Gender,Confirmed,activation_id) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", array(
+                            $make_me_acc  = $core_db2->Execute("INSERT INTO MEMB_INFO (memb___id,memb__pwd,memb_name,sno__numb,bloc_code,ctl1_code,mail_chek,mail_addr,appl_days,modi_days,out__days,true_days,fpas_ques,fpas_answ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)", array(
                                 $userid,
                                 $password,
                                 'test',
@@ -335,11 +304,7 @@ function parse_inputs(){
                                 '2005-01-03',
                                 '2005-01-03',
                                 $question,
-                                $anaswer,
-                                $country,
-                                $gender,
-                                $confirmed,
-                                $activation_id
+                                $anaswer
                             ));
                             $make_me_acc_ = 1;
                             /*
