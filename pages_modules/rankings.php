@@ -103,7 +103,7 @@ function get_data(div,id, page, form, append, data){
                     $jq_cron_up = $core_db->Execute("Update MUCore_Cron_Jobs set next_cron=(" . time() . "+cron_time_set) where cron_id=?", array(
                         trim($get_config->cron_job_1)
                     ));
-                    $qry_r      = $core_db->Execute("Select top " . $get_config->char_top . " mu_id,name,class,clevel,resets,strength,dexterity,vitality,energy,ctlcode,accountid,leadership,grand_resets from character order by grand_resets desc, resets desc, clevel desc");
+                    $qry_r      = $core_db->Execute("Select top " . $get_config->char_top . " mu_id,name,class,clevel,resetCount,strength,dexterity,vitality,energy,ctlcode,accountid,leadership,masterResetCount from character order by masterResetCount desc, resetCount desc, clevel desc");
                     while (!$qry_r->EOF) {
                         $init_r .= "" . $qry_r->fields[0] . "|" . base64_encode($qry_r->fields[1]) . "|" . $qry_r->fields[2] . "|" . $qry_r->fields[3] . "|" . $qry_r->fields[4] . "|" . $qry_r->fields[5] . "|" . $qry_r->fields[6] . "|" . $qry_r->fields[7] . "|" . $qry_r->fields[8] . "|" . $qry_r->fields[9] . "|" . $qry_r->fields[10] . "|" . $qry_r->fields[11] . "|" . $qry_r->fields[12] . "|\n";
                         $qry_r->MoveNext();
@@ -274,7 +274,7 @@ function get_data(div,id, page, form, append, data){
                     ));
                     $qry_c_dis  = $core_db->Execute("Select DISTINCT class from character");
                     while (!$qry_c_dis->EOF) {
-                        $qry_c = $core_db->Execute("Select top " . $get_config->char_top . " mu_id,name,class,clevel,resets,strength,dexterity,vitality,energy,ctlcode,accountid,leadership,grand_resets from character where class='" . $qry_c_dis->fields[0] . "' order by grand_resets desc, resets desc, clevel desc");
+                        $qry_c = $core_db->Execute("Select top " . $get_config->char_top . " mu_id,name,class,clevel,resetCount,strength,dexterity,vitality,energy,ctlcode,accountid,leadership,masterResetCount from character where class='" . $qry_c_dis->fields[0] . "' order by masterResetCount desc, resetCount desc, clevel desc");
                         while (!$qry_c->EOF) {
                             $init_cls .= "" . $qry_c->fields[0] . "|" . base64_encode($qry_c->fields[1]) . "|" . $qry_c->fields[2] . "|" . $qry_c->fields[3] . "|" . $qry_c->fields[4] . "|" . $qry_c->fields[5] . "|" . $qry_c->fields[6] . "|" . $qry_c->fields[7] . "|" . $qry_c->fields[8] . "|" . $qry_c->fields[9] . "|" . $qry_c->fields[10] . "|" . $qry_c->fields[11] . "|" . $qry_c->fields[12] . "|\n";
                             $qry_c->MoveNext();

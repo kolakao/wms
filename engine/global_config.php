@@ -1,6 +1,6 @@
 <?
 $core['config']['on_off'] = "1";
-$core['config']['website_url'] = "http://wykopmu.pl";
+$core['config']['website_url'] = "http://95.160.44.167:8080";
 $core['config']['websitetitle'] = "WykopMU";
 $core['config']['md5'] = "0";
 $core['config']['crypt_key'] = "khcynzpj";

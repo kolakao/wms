@@ -1,0 +1,102 @@
+﻿@charset "utf-8";
+
+html, body {font:normal 11px/1 tahoma, Arial, Verdana;color:#666;}
+html, body, form, input, legend, label, select, option, button, fieldset, textarea, div, p, pre, blockquote, img, h1, h2, h3, h4, h5, h6, dl, dt, dd, ul, ol, li {margin:0;padding:0;}
+img {vertical-align:top;}button {cursor:pointer;}ol, ul, dl, li {list-style:none;}fieldset, img {border:0;}input, select, button {vertical-align:middle;}
+a {text-decoration:none;color:#666;}a:hover {text-decoration:underline;color:#666;}
+
+select, input, textarea	{font:normal 11px/1 tahoma, Arial, Verdana;color:#666;}
+select {height:22px;font:normal 11px/1 tahoma, Arial, Verdana;color:#666;}
+header, footer, section, article, aside, nav, hgroup, details, menu, figure, figcaption {display:block;margin:0;padding:0;}
+.none {position:absolute;left:-3000px;top:-3000px;width:0;height:0;font-size:0;line-height:0;overflow:hidden;}
+
+#skipNavi {position:relative;}#skipNavi a {display:block;height:1px;width:1px;margin-bottom:-1px;overflow:hidden;text-align:center;color:#000;white-space:nowrap;}#skipNavi a:focus, #skipNavi a:active {height:auto;width:auto;padding:5px;margin-bottom:10px;color:#fff;}
+
+header.gGameGNB {position:relative;width:100%;background:url('http://image.webzen.net/Platform/header_wrap_bg.gif') repeat-x left top;z-index:7000;}
+header.gGameGNB h1 {float:left;padding:11px 5px 13px 0;_padding:10px 0 10px 0;}
+header.gGameGNB h1 a {display:block;width:39px;height:25px;background:url('http://image.webzen.net/Platform/logo_w.png') no-repeat;}
+*html header.gGameGNB h1 a {background:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://image.webzen.net/Platform/logo_w.png', sizingMethod='crop');cursor:pointer;}
+header.gGameGNB .g_Line_left {position:absolute;left:0;top:50px;width:50%;height:3px;background:url('http://image.webzen.net/Platform/g_line_left.gif') repeat-x left top;_line-height:0;_font-size:0;z-index:-1;}
+header.gGameGNB .g_Line_right {position:absolute;right:0;top:50px;width:50%;height:3px;background:url('http://image.webzen.net/Platform/g_line_right.gif') repeat-x right top;_line-height:0;_font-size:0;z-index:-1;}
+header.gGameGNB section {width:980px;margin:0 auto;padding-top:1px;background:#fff;}
+header.gGameGNB section .sliceImg {clear:both;height:3px;background:url('http://image.webzen.net/Platform/g_line_right.gif') repeat-x center 0;_line-height:0;_font-size:0;}
+
+#GlobalGameNav {float:left;padding-top:18px;height:30px;_padding-top:15px;_height:27px;}
+#GlobalGameNav li {float:left;position:relative;height:37px;_height:34px;padding:0 5px 0 12px;font:bold 14px/1 Arial, Verdana, sans-serif;color:#333;background:url('http://image.webzen.net/Platform/g_nav_div.gif') no-repeat right 2px;z-index:9000;}
+#GlobalGameNav li.newGnbMenu {min-height: 35px;_height: 35px;}
+#GlobalGameNav li a.depth01 {padding-right:12px;font:bold 14px/1 Arial, Verdana, sans-serif;color:#333;}
+#GlobalGameNav li a.depth01:hover {color:#ed1c24;text-decoration:none;}
+#GlobalGameNav li a.depth01 img {vertical-align:middle;}
+#GlobalGameNav li.on {font:bold 14px/1 Arial, Verdana, sans-serif;color:#ed1c24;}
+#GlobalGameNav li.on a.depth01 {color:#ed1c24;}
+#GlobalGameNav li.end {background:none;}
+#GlobalGameNav li.no {padding:0 12px;}
+#GlobalGameNav li.no a.depth01, #GlobalGameNav li.no a.depth01:hover {padding-right:7px;background:none;}
+#GlobalGameNav li .gameSlideNavArea {display: none;position:absolute;left:10px;top:25px;padding:0 10px;border:1px solid #de131b;background:#fff url('http://image.webzen.net/Platform/depth02_bg02.gif') no-repeat right bottom;z-index:9010;}
+#GlobalGameNav li .gameSlideNavArea .gameSlideNavBox {background:url('http://image.webzen.net/Platform/g_nav_depth02_div.gif') repeat-x;}
+#GlobalGameNav li .gameSlideNavArea a {display:block;min-width:100px;_width:100px;height:21px;padding:10px 10px 0 10px;font:bold 12px/1 Arial, Verdana, sans-serif;color:#333;white-space:nowrap;}
+#GlobalGameNav li .gameSlideNavArea a:hover {color:#ed1c24;text-decoration:none;}
+#GlobalGameNav li .gameSlideNavArea a strong.cbt {font:bold 10px/1 tahoma, Arial, Verdana;color:#1369de;}
+#GlobalGameNav li .gameSlideNavArea a strong.dev {font:bold 10px/1 tahoma, Arial, Verdana;color:#e66a06;}
+#GlobalGameNav li .gameSlideNavArea a strong span {font-weight:normal}
+
+#GlobalGameJoin {float:right;padding:10px 0 0 0;}
+#GlobalGameJoin .dafaultCase {float:right;}
+#GlobalGameJoin .dafaultCase span {float:left;padding:8px 0 0 10px;}
+#GlobalGameJoin .dafaultCase span a {font:normal 12px/1 Arial, Verdana, sans-serif;color:#666;}
+#GlobalGameJoin .dafaultCase span.fbook {padding-top:2px;}
+
+#GlobalGameJoin .langSelect {position:relative;float:right;padding-left:10px;}
+#GlobalGameJoin .langSelect h3 {width:170px;height:26px;background:url('http://image.webzen.net/Platform/g_floag_select_bg.gif') no-repeat left top;text-align:left;}
+#GlobalGameJoin .langSelect h3 a {position:absolute;left:10px;top:0;display:block;width:160px;height:21px;padding:5px 0 0 10px;font:normal 11px/1.2 Tahoma, Arial, Helvetica, sans-serif;color:#666;text-decoration:none;}
+#GlobalGameJoin .langSelect h3 a:hover {text-decoration:none;}
+#GlobalGameJoin .langSelect h3 a img {margin-right:3px;}
+#GlobalGameJoin .langSelectlist {position:absolute;left:10px;top:25px;width:168px;border:1px solid #ccc;border-top:1px solid #fff;background:#fff;z-index:101;}
+#GlobalGameJoin .langSelectlist .langSelectinner {width:168px;overflow:hidden;}
+#GlobalGameJoin .langSelectlist .langSelectinner img {margin:10px 0 0 7px;}
+#GlobalGameJoin .langSelectlist .langSelectinner .gameGNBflagsEtc {padding:7px 0 5px 0;text-align:center;}
+#GlobalGameJoin .langSelectlist .langSelectinner .gameGNBflagsEtc a {color:#287cdb;}
+#GlobalGameJoin .langSelectlist .langSelectinner .gameGNBflagsEtc a:hover {color:#287cdb;text-decoration:none;}
+
+#GlobalGameJoin ul {float:right;}
+#GlobalGameJoin li {float:left;position:relative;top:3px;height:30px;padding:0 0 0 8px;z-index:9000;}
+#GlobalGameJoin li a {font:normal 12px/1.2 Arial, Verdana, sans-serif;color:#666;}
+#GlobalGameJoin li a.depth01 {padding-right:10px;font:normal 12px/1.2 Arial, Verdana, sans-serif;color:#666;background:url('http://image.webzen.net/Platform/g_nav_join_arrow_off.gif') no-repeat right 6px;}
+#GlobalGameJoin li a.depth01:hover {text-decoration:none;}
+#GlobalGameJoin li a.depth01 img {vertical-align:middle;margin-right:7px;}
+#GlobalGameJoin li .myInfoNavArea {display: none;position:absolute;left:-148px;top:25px;width:250px;background:url('http://image.webzen.net/Platform/g_game_myinfo_bg01.gif') no-repeat;z-index:9010;}
+#GlobalGameJoin li .myInfoNavArea .myInfoNavBox {padding:11px 0 0 0;}
+#GlobalGameJoin li .myInfoNavArea .myInfoNavBox .myImg {float:left;padding-left:11px;}
+#GlobalGameJoin li .myInfoNavArea .myInfoNavBox .myImg img {border:1px solid #ccc;}
+#GlobalGameJoin li .myInfoNavArea .myInfoNavBox .myAccount {float:left;}
+#GlobalGameJoin li .myInfoNavArea .myInfoNavBox .myAccount li {width:63px;padding:0 1px 0 0;text-align:center;font:normal 10px/1 tahoma, Arial, Verdana;}
+#GlobalGameJoin li .myInfoNavArea .myInfoNavBox .myAccount li a {font:bold 11px/1.2 Arial, Verdana, sans-serif;color:#da121a;}
+#GlobalGameJoin li .myInfoNavArea .myInfoNavBox .myAccount li a:hover {color:#da121a;}
+#GlobalGameJoin li .myInfoNavArea .myInfoNavBox .myAccount li img {margin:4px 0;}
+#GlobalGameJoin li .myInfoNavArea .myInfoNavBox .myLink {clear:both;float:none;padding:17px 0 0 11px;}
+#GlobalGameJoin li .myInfoNavArea .myInfoNavBox .myLink li {clear:both;float:none;height:19px;background:url('http://image.webzen.net/Platform/g_game_myinfo_ico_jum.gif') no-repeat left 5px;}
+#GlobalGameJoin li .myInfoNavArea .myInfoNavBox .myLink li a {font:normal 11px/1 tahoma, Arial, Verdana;}
+#GlobalGameJoin li .myInfoNavArea .myInfoNavBox .logoutClick {clear:both;height:21px;padding:7px 10px 0 0;margin-top:5px;text-align:right;background:url('http://image.webzen.net/Platform/g_game_myinfo_bg02.gif') no-repeat;}
+#GlobalGameJoin li .myInfoNavArea .myInfoNavBox .logoutClick a {font:bold 11px/1.2 Arial, Verdana, sans-serif;color:#fff;}
+#GlobalGameJoin li .myInfoNavArea .myInfoNavBox .logoutClick a:hover {text-decoration:none;}
+#GlobalGameJoin li .myInfoNavArea .myInfoNavBox .logoutClick img {vertical-align:middle;margin-left:5px;}
+
+footer {position:relative;top:60px;clear:both;width:100%;background:#f8f8f8;z-index:6000;}
+footer .f_Line_left {position:absolute;left:0;top:0;width:50%;height:40px;border-top:1px solid #e1e1e1;border-bottom:1px solid #e1e1e1;text-align:right;background:#efefef;z-index:-1;}
+footer .f_Line_right {position:absolute;right:0;top:0;width:50%;height:40px;border-top:1px solid #e1e1e1;border-bottom:1px solid #e1e1e1;background:#e1e1e1;z-index:-1;}
+footer .search {position:relative;width:950px;margin:0 auto;height:40px;border-top:1px solid #e1e1e1;border-bottom:1px solid #e1e1e1;background:#efefef;z-index:6010;}
+footer .search .sliceImg {clear:both;position:relative;}
+footer .search .sliceImg img {position:absolute;right:0;top:-1px;}
+footer .search .ContryGo {position:absolute;left:20px;top:15px;}
+footer .search .ContryGo dt {float:left;padding-right:17px;font:bold 11px/1 Arial, Verdana, sans-serif;color:#333;background:url('http://image.webzen.net/Platform/f_global_div.gif') no-repeat right top;}
+footer .search .ContryGo dd {float:left;padding-left:17px;}
+footer .search .ContryGo dd a {padding-right:12px;}
+footer .search .f_searchWrap {position:absolute;right:0;top:0;width:100px;height:20px;margin:9px 20px 0 0;background:#000;}
+footer .f_siteMap {clear:both;width:910px;margin:0 auto;padding:37px 20px 0 20px;background:#f8f8f8;overflow:hidden;}
+footer .f_siteMap article {float:left;width:182px;padding-bottom:45px;}
+footer .f_siteMap article h3 {height:29px;font:bold 14px/1 Arial, Verdana, sans-serif;color:#333;}
+footer .f_siteMap article li a {line-height:17px;}
+footer .f_siteMap article.f_contus a,footer .f_siteMap article.f_contus a:hover {color:#287cdb;}
+footer .f_copyright {clear:both;width:909px;height:51px;padding:21px 20px 0 21px;margin:0 auto;border-top:1px solid #e1e1e1;background:#f8f8f8;}
+footer .f_copyright div {float:left;padding-right:20px;}
+footer .f_copyright small {font:normal 10px/1.2 tahoma, Arial, Verdana;color:#b5b4b4;}

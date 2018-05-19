@@ -7,6 +7,10 @@
 */
 if (isset($_GET['mod'])) {
     if (empty($_GET['id'])) {
+		echo('KURLA!');
+		echo($_GET['id']);
+		echo($_GET['character']);
+		echo('KURLA!');
         echo notice_message_admin('Unable to proceed your request.', '0', '1', '0');
     } else {
         $id   = safe_input($_GET['id'], '');

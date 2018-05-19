@@ -1,0 +1,1 @@
+document.write('<script src ="'+gp.Http.Platform+'/Scripts/jquery.validate-1.8.1.min.js" type="text/javascript"></script>');document.write('<script src ="'+gp.Http.Platform+'/Scripts/jquery.validate.unobtrusive.min.js" type="text/javascript"></script>');
