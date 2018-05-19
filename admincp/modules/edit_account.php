@@ -20,14 +20,14 @@ if (isset($_GET['mod'])) {
         echo notice_message_admin('Unable to proceed your request.', '0', '1', '0');
     } else {
         $id   = safe_input($_GET['id'], '');
-        $info = $core_db2->Execute("Select  memb_guid,memb___id,bloc_code,mail_addr,sno__numb,SecretQuestion,SecretAnswer,Country,Gender from MEMB_INFO where memb_guid=?", array(
+        $info = $core_db2->Execute("Select  memb_guid,memb___id,bloc_code,mail_addr,sno__numb,fpas_ques,fpas_answ from MuOnline.dbo.MEMB_INFO where memb_guid=?", array(
             $id
         ));
         if ($info->EOF) {
             echo notice_message_admin('Unable to find account.', '0', '1', '0');
         } else {
             if (isset($_POST['edit'])) {
-                if ($_POST['mode'] == 'x' || $_POST['question'] == 'x' || $_POST['country'] == 'x') {
+                if ($_POST['mode'] == 'x' || $_POST['question'] == 'x') {
                     echo notice_message_admin('Error some fields where left blank.', '0', '1', '0');
                 } else {
                     if (account_online($info->fields[1]) === true) {
@@ -45,14 +45,12 @@ if (isset($_GET['mod'])) {
                         }
                         $question = safe_input($_POST['question'], '');
                         $answer   = safe_input($_POST['answer'], '');
-                        $country  = safe_input($_POST['country'], '');
-                        $gender   = safe_input($_POST['gender'], '');
                         
                         
                         
                         if (isset($password)) {
                             if ($core['config']['md5'] == '1') {
-                                $update = $core_db2->Execute("Update MEMB_INFO set memb__pwd=[dbo].[fn_md5](?,?),bloc_code=?,mail_addr=?,sno__numb=?,SecretQuestion=?,SecretAnswer=?,Country=?,Gender=? from MEMB_INFO where memb_guid=?", array(
+                                $update = $core_db2->Execute("Update MEMB_INFO set memb__pwd=[dbo].[fn_md5](?,?),bloc_code=?,mail_addr=?,sno__numb=?,fpas_ques=?,fpas_answ=? from MEMB_INFO where memb_guid=?", array(
                                     $password,
                                     $info->fields[1],
                                     $mode,
@@ -60,32 +58,26 @@ if (isset($_GET['mod'])) {
                                     $pid,
                                     $question,
                                     $answer,
-                                    $country,
-                                    $gender,
                                     $id
                                 ));
                             } elseif ($core['config']['md5'] == '1') {
-                                $update = $core_db2->Execute("Update memb_info set memb__pwd,bloc_code=?,mail_addr=?,sno__numb=?,SecretQuestion=?,SecretAnswer=?,Country=?,Gender=? from MEMB_INFO where memb_guid=?", array(
+                                $update = $core_db2->Execute("Update memb_info set memb__pwd,bloc_code=?,mail_addr=?,sno__numb=?,fpas_ques=?,fpas_answ=? from MEMB_INFO where memb_guid=?", array(
                                     $password,
                                     $mode,
                                     $mail,
                                     $pid,
                                     $question,
                                     $answer,
-                                    $country,
-                                    $gender,
                                     $id
                                 ));
                             }
                         } else {
-                            $update = $core_db2->Execute("Update MEMB_INFO set bloc_code=?,mail_addr=?,sno__numb=?,SecretQuestion=?,SecretAnswer=?,Country=?,Gender=? from MEMB_INFO where memb_guid=?", array(
+                            $update = $core_db2->Execute("Update MEMB_INFO set bloc_code=?,mail_addr=?,sno__numb=?,fpas_ques=?,fpas_answ=? from MEMB_INFO where memb_guid=?", array(
                                 $mode,
                                 $mail,
                                 $pid,
                                 $question,
                                 $answer,
-                                $country,
-                                $gender,
                                 $id
                             ));
                         }
@@ -189,49 +181,6 @@ if (isset($_GET['mod'])) {
     <td align="left" class="panel_text_alt2" width="50%"><input type="text" name="answer" value="' . htmlspecialchars($info->fields[6]) . '"></td>
     </tr>
     
-    
-    
-    <tr>
-    <td align="left" class="panel_title_sub" colspan="2">Country</td>
-    </tr>
-    <tr>
-    <td align="left" class="panel_text_alt1" width="50%">User\'s country.</td>
-    <td align="left" class="panel_text_alt2" width="50%">
-    <select name="country">
-    <option value="x">Choose a Country</option>
-    <optgroup label="---------------">
-        ';
-                $c = getcountry('list');
-                foreach ($c as $cc => $v) {
-                    if ($cc == $info->fields[7]) {
-                        echo '<option value="' . $cc . '" selected="selected">' . $v . '</option>';
-                    } else {
-                        echo '<option value="' . $cc . '">' . $v . '</option>';
-                    }
-                    
-                }
-                
-                echo '</select></td>
-    </tr>    
-    
-    
-    <tr>
-    <td align="left" class="panel_title_sub" colspan="2">Gender</td>
-    </tr>
-    <tr>
-    <td align="left" class="panel_text_alt1" width="50%">User\'s gender.</td>
-    <td align="left" class="panel_text_alt2" width="50%">';
-                switch ($info->fields[8]) {
-                    case '1':
-                        echo '<label><input type="radio" name="gender" value="1" checked="checked">Male</label> <label><input type="radio" name="gender" value="2">Female</label>';
-                        break;
-                    case '2':
-                        echo '<label><input type="radio" name="gender" value="1">Male</label> <label><input type="radio" name="gender" value="2" checked="checked">Female</label>';
-                        break;
-                }
-                
-                echo '</td>
-    </tr>
     
     </tr>
     <tr>
@@ -375,8 +324,6 @@ Select search type.<br<br><b>Exact Match</b> - Will search for exact match of us
 <tr>
 <td align="left" class="panel_title_sub2">User ID</td>
 <td align="left" class="panel_title_sub2">Email Address</td>
-<td align="left" class="panel_title_sub2">Gender</td>
-<td align="left" class="panel_title_sub2">Country</td>
 <td align="left" class="panel_title_sub2" width="50">Controls</td>
 </tr>';
             
@@ -392,7 +339,7 @@ Select search type.<br<br><b>Exact Match</b> - Will search for exact match of us
                 }
                 
             } elseif ($_POST['search_t'] == '0') {
-                $user  = $core_db2->Execute("Select top 100 memb_guid,memb___id,mail_addr,Gender,Country from MEMB_INFO where memb___id like ?", array(
+                $user  = $core_db2->Execute("Select top 100 memb_guid,memb___id,mail_addr from MEMB_INFO where memb___id like ?", array(
                     '%' . $userid . '%'
                 ));
                 $count = 0;
@@ -402,17 +349,9 @@ Select search type.<br<br><b>Exact Match</b> - Will search for exact match of us
                     echo '<tr class="' . $tr_color . '">
             <td align="left" class="panel_text_alt_list"><strong>' . htmlspecialchars($user->fields[1]) . '</strong></td>
             <td align="left" class="panel_text_alt_list" >' . htmlspecialchars($user->fields[2]) . '</td>
-            <td align="left" class="panel_text_alt_list" >';
-                    switch ($user->fields[3]) {
-                        case '1':
-                            echo 'Male';
-                            break;
-                        case '2':
-                            echo 'Female';
-                            break;
-                    }
-                    echo '</td>
-            <td align="left" class="panel_text_alt_list" >' . getcountry($user->fields[4]) . '</td>
+            <td align="left" class="panel_text_alt_list" ></td>
+            <td align="left" class="panel_text_alt_list" ></td>
+
             <td align="left" class="panel_text_alt_list"><a href="index.php?get=edit_account&mod=edit&id=' . $user->fields[0] . '">[Edit]</a></td>
             </tr>';
                     $user->MoveNext();

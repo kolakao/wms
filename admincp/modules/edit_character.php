@@ -14,9 +14,10 @@ if (isset($_GET['mod'])) {
         echo notice_message_admin('Unable to proceed your request.', '0', '1', '0');
     } else {
         $id   = safe_input($_GET['id'], '');
-        $info = $core_db->Execute("Select mu_id,Name,AccountID,CtlCode,Class,cLevel,Resets,Grand_Resets,MapNumber,MapPosX,MapPosY,PkLevel,PkCount,Strength,Dexterity,Vitality,Energy,Leadership,LevelUpPoint,Money,SCFMasterPoints,SCFPCPoints,SCFMasterLevel from Character where mu_id=?", array(
+        $info = $core_db->Execute("Select mu_id,Name,AccountID,CtlCode,Class,cLevel,resetCount,masterResetCount,MapNumber,MapPosX,MapPosY,PkLevel,PkCount,Strength,Dexterity,Vitality,Energy,Leadership,LevelUpPoint,Money from Character where mu_id=?", array(
             $id
         ));
+		$masterLevelInfo = $core_db->Execute("Select masterLevel, masterPoint, masterExperience from MasterSkillTree where name=?",array($info->fields[1]));
         if ($info->EOF) {
             echo notice_message_admin('Unable to find character.', '0', '1', '0');
         } else {
@@ -107,7 +108,7 @@ if (isset($_GET['mod'])) {
                         } else {
                             $pc_points = safe_input($_POST['pc_points'], '');
                         }
-                        $update = $core_db->Execute("update Character set CtlCode=?,Class=?,cLevel=?,Resets=?,Grand_Resets=?,MapNumber=?,MapPosX=?,MapPosY=?,PkLevel=?,PkCount=?,Strength=?,Dexterity=?,Vitality=?,Energy=?,Leadership=?,LevelUpPoint=?,Money=?,SCFMasterPoints=?,SCFPCPoints=?,SCFMasterLevel=? where mu_id=?", array(
+                        $update = $core_db->Execute("update Character set CtlCode=?,Class=?,cLevel=?,resetCount=?,masterResetCount=?,MapNumber=?,MapPosX=?,MapPosY=?,PkLevel=?,PkCount=?,Strength=?,Dexterity=?,Vitality=?,Energy=?,Leadership=?,LevelUpPoint=?,Money=? where mu_id=?", array(
                             safe_input($_POST['mode'], ''),
                             safe_input($_POST['class'], ''),
                             $level,
@@ -125,16 +126,21 @@ if (isset($_GET['mod'])) {
                             $cmd,
                             $levelup,
                             $zen,
-                            $master_points,
-                            $pc_points,
-                            $master_level,
                             $id
                         ));
+						$updateMasterPoints = $core_db ->Execute("update MasterSkillTree set MasterLevel=?,MasterPoint=? where name=?", array(
+							$master_level,
+                            $master_points,
+							$info->fields[1]
+						));
                         if ($update) {
                             echo notice_message_admin('Character successfully edited', 1, 0, 'index.php?get=edit_character&mod=edit&id=' . $id . '');
                         } else {
                             echo notice_message_admin('Unable to edit character, system error.', '0', '1', '0');
                         }
+						if(!$updateMasterPoints) {
+							echo notice_message_admin('MasterLevelPoints failed to update! ERROR!', '0', '1', '0');
+						}
                     }
                 }
             } else {
@@ -294,7 +300,7 @@ if (isset($_GET['mod'])) {
     </tr>
     <tr>
     <td align="left" class="panel_text_alt1" width="50%">Character\'s MasterLevel, MasterPoints and PCPoints</td>
-    <td align="left" class="panel_text_alt2" width="50%">MasterLevel: <input type="text" name="master_level" value="' . htmlspecialchars($info->fields[22]) . '" size="5"> MasterPoints: <input type="text" name="master_points" value="' . htmlspecialchars($info->fields[20]) . '" size="5"> PCPoints: <input type="text" name="pc_points" value="' . htmlspecialchars($info->fields[21]) . '" size="5">
+    <td align="left" class="panel_text_alt2" width="50%">MasterLevel: <input type="text" name="master_level" value="' . htmlspecialchars($masterLevelInfo->fields[0]) . '" size="5"> MasterPoints: <input type="text" name="master_points" value="' . htmlspecialchars($masterLevelInfo->fields[1]) . '" size="5"> PCPoints: <input type="text" name="pc_points" value="' . htmlspecialchars($info->fields[21]) . '" size="5">
     </td>
     </tr>    
     
