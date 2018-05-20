@@ -33,6 +33,7 @@
 <nav_option link="index.php?get=mucoins_manager" group="2">Credits Management</nav_option>
 <nav_option link="index.php?get=mucoins_add" group="2">Add Credits</nav_option>
 <nav_option link="index.php?get=users_activate" group="2">Users Awaiting Activation</nav_option>
+<nav_option link="index.php?get=players_online" group="2">Players Online</nav_option>
 	</nav_cat>
 
 	<nav_cat title="Content Management" group="3">

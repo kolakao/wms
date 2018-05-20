@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <reset_settings>
-<active>1</active>
+<active>0</active>
 <resets_need>40</resets_need>
 <level>400</level>
 <zen>1000000000</zen>
