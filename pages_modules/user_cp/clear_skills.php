@@ -24,7 +24,7 @@ if ($active == '0') {
                 if (account_online($user_auth_id) === true) {
                     echo msg('0', text_clearskills_t1);
                 } else {
-                    $clear = $core_db->Execute("Update Character set [SCFMasterLevel]='1',[MagicList]=CONVERT(varbinary(180), null) where mu_id=?", array(
+                    $clear = $core_db->Execute("Update Character set [MagicList]=CONVERT(varbinary(180), null) where mu_id=?", array(
                         $id
                     ));
                     if ($clear) {
